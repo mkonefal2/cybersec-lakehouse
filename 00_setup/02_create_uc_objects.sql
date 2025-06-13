@@ -8,18 +8,18 @@ CREATE SCHEMA IF NOT EXISTS gold;
 
 -- Sample bronze tables
 CREATE TABLE IF NOT EXISTS bronze.firewall_logs (
-    `Source Port` INT,
-    `Destination Port` INT,
-    `NAT Source Port` INT,
-    `NAT Destination Port` INT,
-    `Action` STRING,
-    `Bytes` INT,
-    `Bytes Sent` INT,
-    `Bytes Received` INT,
-    `Packets` INT,
-    `Elapsed Time (sec)` INT,
-    `pkts_sent` INT,
-    `pkts_received` INT
+    Source_Port INT,
+    Destination_Port INT,
+    NAT_Source_Port INT,
+    NAT_Destination_Port INT,
+    Action STRING,
+    Bytes INT,
+    Bytes_Sent INT,
+    Bytes_Received INT,
+    Packets INT,
+    Elapsed_Time_sec INT,
+    pkts_sent INT,
+    pkts_received INT
 );
 
 CREATE TABLE IF NOT EXISTS bronze.netflow_logs (
