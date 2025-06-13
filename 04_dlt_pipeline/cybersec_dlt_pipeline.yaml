@@ -1,0 +1,12 @@
+# Delta Live Tables pipeline configuration
+name: cybersec-dlt
+clusters:
+  - label: default
+    num_workers: 2
+libraries:
+  - notebook: ../01_ingest_bronze/02_stream_netflow_autoloader.py
+  - notebook: ../02_transform_silver/02_cdc_upsert_netflow.py
+  - notebook: ../03_aggregate_gold/01_threat_indicator.sql
+  - notebook: ../03_aggregate_gold/02_traffic_baseline.sql
+continuous: true
+channel: CURRENT
