@@ -1,0 +1,10 @@
+{
+  "name": "cybersec-job-policy",
+  "definition": {
+    "spark_version": {"type": "fixed", "value": "latest"},
+    "node_type_id": {"type": "fixed", "value": "i3.xlarge"},
+    "num_workers": {"type": "fixed", "value": 2},
+    "autoscale": {"type": "hidden"}
+  },
+  "description": "Restrictive policy for scheduled jobs"
+}

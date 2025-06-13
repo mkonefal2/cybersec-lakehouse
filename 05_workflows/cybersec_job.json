@@ -1,0 +1,14 @@
+{
+  "name": "cybersec-lakehouse-job",
+  "tasks": [
+    {
+      "task_key": "ingest_firewall",
+      "notebook_task": {"notebook_path": "../01_ingest_bronze/01_batch_fw_logs_autoloader.py"}
+    },
+    {
+      "task_key": "dlt_pipeline",
+      "depends_on": ["ingest_firewall"],
+      "pipeline_task": {"pipeline_id": "cybersec-dlt"}
+    }
+  ]
+}
