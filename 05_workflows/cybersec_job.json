@@ -1,0 +1,19 @@
+{
+  "name": "cybersec_pipeline",
+  "tasks": [
+    {
+      "task_key": "generate_data",
+      "python_wheel_task": {
+        "package_name": "setup",
+        "entry_point": "00_setup/01_generate_sample_data.py"
+      }
+    },
+    {
+      "task_key": "batch_ingest",
+      "depends_on": ["generate_data"],
+      "notebook_task": {
+        "notebook_path": "01_ingest_bronze/01_batch_fw_logs_autoloader.py"
+      }
+    }
+  ]
+}

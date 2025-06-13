@@ -1,0 +1,10 @@
+# Sample Delta Live Tables pipeline definition
+name: cybersec_dlt_pipeline
+clusters:
+  - label: default
+    num_workers: 1
+libraries:
+  - notebook: 01_ingest_bronze/01_batch_fw_logs_autoloader.py
+  - notebook: 01_ingest_bronze/02_stream_netflow_autoloader.py
+channel: CURRENT
+continuous: false
